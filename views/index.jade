@@ -1,0 +1,20 @@
+h1(style="background-image:url(./plugin/"+uuid+"/public/icon.png)")
+	a(href=app.trackViewUrl) #{app.trackCensoredName}
+h2 #{app.sellerName}
+img(src=app.artworkUrl512 class='bigimage' alt='App Icon')
+p #{app.description}
+table
+	tr
+		th Price
+		td #{app.formattedPrice}
+	tr
+		th Genre
+		td #{app.primaryGenreName}
+	tr
+		th Version
+		td #{app.version}
+	- if (app.averageUserRating >= 0) {
+		tr
+			th Rating
+			td #{app.averageUserRating}
+	- }
